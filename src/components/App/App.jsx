@@ -8,7 +8,7 @@ import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Admin from '../Admin/Admin';
-
+import Complete from '../Complete/Complete';
 
 function App() {
 
@@ -21,18 +21,39 @@ function App() {
         </header>
       <Route exact path="/">
         <Feeling />
+        <Link to="/understanding">
+        <button>Next</button>
+        </Link>
       </Route>
       <Route path="/understanding">
         <Understanding />
+        <Link to="/supported">
+        <button>Next</button>
+        </Link>
       </Route>
       <Route path="/supported">
         <Supported />
+        <Link to="/comments">
+        <button>Next</button>
+        </Link>
       </Route>
       <Route path="/comments">
         <Comments />
+        <Link to="/review">
+        <button>Next</button>
+        </Link>
       </Route>
       <Route path="/review">
         <Review />
+        <Link to="/complete">
+          <button>Submit</button>
+        </Link>
+      </Route>
+      <Route path="/complete">
+        <Complete />
+        <Link to="/">
+          <button>Submit New Feedback</button>
+        </Link>
       </Route>
       {/* this is the stretch goal */}
       <Route path="/admin">

@@ -1,5 +1,16 @@
 .comment-input {
     width: 300px;
-    height: 100px;
+    height: 80px;
     padding: 0;
+}
+
+.next-button {
+    height: 40px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background-color: #5923F2;
+    color: white;
+    border-radius: 10px;
 }

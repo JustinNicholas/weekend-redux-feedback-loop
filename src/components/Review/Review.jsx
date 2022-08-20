@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import axios from 'axios';
 import {useSelector} from 'react-redux';
 import { useState } from 'react';
+//try
+import Confetti from 'react-dom-confetti';
 
 function Review() {
 
@@ -11,17 +13,22 @@ function Review() {
   const history = useHistory();
 
   const handleSubmit = () => {
-
+    setIsSubmitted(true);
     axios.post('/feedback', form)
       .then( response => {
+        setTimeout(() => celebrate(), 2000)
         dispatch({
           type: "CLEAR_FORM"
         });
-        history.push('/complete')
       }).catch( err => {
         console.log('cs post fail');
         console.log(err);
       })
+  }
+  const celebrate = async () => {
+//
+    // alert('thanks for remembering')
+    history.push('/complete')
   }
 
   const [isEditing, setIsEditing] = useState(false);
@@ -65,12 +72,14 @@ function Review() {
     if(updatedForm.feeling === '' || updatedForm.support === '' || updatedForm.understanding === '') {
       alert('must have value for feeling, support, and understanding')
     } else {
+    setIsSubmitted(true);
     axios.post('/feedback', updatedForm)
       .then( response => {
+        setIsSubmitted(true);
+        setTimeout(() => celebrate(), 2000)
         dispatch({
           type: "CLEAR_FORM"
         });
-        history.push('/complete')
       }).catch( err => {
         console.log('cs post fail');
         console.log(err);
@@ -78,18 +87,37 @@ function Review() {
     }
   }
 
+  //try
+  const config = {
+    angle: 90,
+    spread: 360,
+    startVelocity: 40,
+    elementCount: 70,
+    dragFriction: 0.12,
+    duration: 3000,
+    stagger: 3,
+    width: "10px",
+    height: "10px",
+    perspective: "500px",
+    colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+  };
+
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
   if (isEditing === false){
     return (
       <>
         <h1>Review</h1>
-        <p>Feelings: {form.feeling}</p>
-        <p>Understanding: {form.understanding}</p>
-        <p>Support: {form.support}</p>
-        <p>Comments: {form.comments}</p>
+        <p>Feelings: <strong>{form.feeling}</strong></p>
+        <p>Understanding: <strong>{form.understanding}</strong></p>
+        <p>Support: <strong>{form.support}</strong></p>
+        <p>Comments: <strong>{form.comments}</strong></p>
         <button onClick={handleSubmit}>Submit</button>
         <button onClick={updateEditState}>Edit</button>
+        <button onClick={() => setIsSubmitted(!isSubmitted)}>confetti</button>
+        <Confetti active={ isSubmitted } config={ config }/>
       </>
-  
+      
     )
   } else {
     return (
@@ -101,6 +129,7 @@ function Review() {
         <p>Comments: <input onChange={(event) => handleCommentsChange(event)} type="text" value={updatedForm.comments}/></p>
         <button onClick={handleSubmitUpdated}>Submit</button>
         <button onClick={updateEditState}>Cancel Edit</button>
+        <Confetti active={ isSubmitted } config={ config }/>
       </>
     )
   }

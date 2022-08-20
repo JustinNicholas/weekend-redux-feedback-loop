@@ -1,17 +1,24 @@
 .App {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.reg {
+  font-weight: 200;
 }
 
 .App-header {
-  background-color: #033076;
-  min-height: 70px;
-  padding: 20px;
+  width: 400px;
+  text-align: left;
+  height: 300px;
   color: white;
-  margin-bottom: 20px;
+  position: absolute;
+  top: 50px;
+  left: 0;
 }
 
 .App-title {
-  font-size: 2em;
+  font-size: 50px;
 }
 
 .App-intro {
@@ -20,4 +27,39 @@
 
 h4 {
   font-style: italic;
+}
+
+.full-width-header {
+  background-color: #5923F2;
+  min-height: 360px;
+  width: 100%;
+}
+
+.question-card {
+  /* margin-top: 33.5px; */
+  background-color: white;
+  color: #5923F2;
+  width: 400px;
+  height: 450px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  border-radius: 20px;
+  background-image: linear-gradient(#5a23f27a, #ffffff50);
+  box-shadow: 2px 4px 4px #095d6826;
+}
+
+.card-container {
+  width: 850px;
+  position:relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.progress-bar{
+  margin-top: 40px;
+  width: 300px;
+  height: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }

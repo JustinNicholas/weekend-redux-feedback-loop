@@ -2,6 +2,7 @@ import {useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import RatingButtons from '../RatingButtons/RatingButtons';
+import './Support.css'
 
 function Support() {
 
@@ -11,7 +12,7 @@ function Support() {
 
   const handleNext = () => {
     if (support === ''){
-      alert('Please select 1 through 10')
+      alert('Please select 1 through 5')
     } else {
       dispatch({
           type: 'SET_SUPPORT',
@@ -24,10 +25,10 @@ function Support() {
 
   return (
     <>
-      <h1>How well are you being supported?</h1>
-      <RatingButtons onClick={(event) => setSupport(event.target.value)} />
+      <h1 className='card-heading'>How well are you being supported?</h1>
+      <RatingButtons onClick={(event) => setSupport(event)} />
       {/* <input type="number" placeholder="Supported?" onChange={ (event) => setSupport(event.target.value) }/> */}
-      <button onClick={handleNext}>Next</button>
+      <div className='next-button' onClick={handleNext}><p className='button-text'>Next</p></div>
     </>
   );
 }

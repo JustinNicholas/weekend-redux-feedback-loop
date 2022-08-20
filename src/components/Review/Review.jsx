@@ -95,9 +95,9 @@ function Review() {
     return (
       <>
         <h1>Review</h1>
-        <p>Feelings: <input onChange={(event) => handleFeelingChange(event)} type="number" min='1' max='10' value={updatedForm.feeling}/></p>
-        <p>Understanding: <input onChange={(event) => handleUnderstandingChange(event)} type="number" min='1' max='10' value={updatedForm.understanding}/></p>
-        <p>Support: <input onChange={(event) => handleSupportChange(event)} type="number" min='1' max='10' value={updatedForm.support}/></p>
+        <p>Feelings: <input onChange={(event) => handleFeelingChange(event)} type="number" min='1' max='5' value={updatedForm.feeling}/></p>
+        <p>Understanding: <input onChange={(event) => handleUnderstandingChange(event)} type="number" min='1' max='5' value={updatedForm.understanding}/></p>
+        <p>Support: <input onChange={(event) => handleSupportChange(event)} type="number" min='1' max='5' value={updatedForm.support}/></p>
         <p>Comments: <input onChange={(event) => handleCommentsChange(event)} type="text" value={updatedForm.comments}/></p>
         <button onClick={handleSubmitUpdated}>Submit</button>
         <button onClick={updateEditState}>Cancel Edit</button>

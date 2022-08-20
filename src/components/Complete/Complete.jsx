@@ -1,10 +1,14 @@
 import { useHistory } from "react-router-dom";
-import { useState } from "react";
+import {useDispatch} from 'react-redux';
 
 function Complete() {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleSubmitNew = () => {
+    dispatch({
+      type: 'CLEAR_PROGRESS'
+    });
 
     history.push("/");
   };

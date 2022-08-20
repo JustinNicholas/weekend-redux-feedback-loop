@@ -2,6 +2,7 @@ import {useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import RatingButtons from '../RatingButtons/RatingButtons';
+import './Understanding.css'
 
 function Understanding() {
 
@@ -11,7 +12,7 @@ function Understanding() {
 
   const handleNext = () => {
     if ( understanding === ''){
-      alert('Please select 1 through 10')
+      alert('Please select 1 through 5')
     } else {
       dispatch({
           type: 'SET_UNDERSTANDING',
@@ -24,10 +25,10 @@ function Understanding() {
 
   return (
     <>
-      <h1>How well are you understanding the content?</h1>
-      <RatingButtons onClick={(event) => setUnderstanding(event.target.value)} />
+      <h1 className='card-heading'>How well are you understanding the content?</h1>
+      <RatingButtons onClick={(event) => setUnderstanding(event)} />
       {/* <input type="number" placeholder="Understanding?" onChange={ (event) => setUnderstanding(event.target.value) }/> */}
-      <button onClick={handleNext}>Next</button>
+      <div className='next-button' onClick={handleNext}><p className='button-text'>Next</p></div>
     </>
   );
 }

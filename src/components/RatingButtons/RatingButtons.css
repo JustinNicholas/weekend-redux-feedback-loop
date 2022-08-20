@@ -1,0 +1,33 @@
+.rating-button{
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    background-color: white;
+    color: #5923F2;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    pointer-events: all;
+}
+
+.rating-button:hover{
+    background-color: #5923F2;
+    color: white;
+}
+
+.rating-button:focus{
+    background-color: #5923F2;
+    color: white;
+}
+
+.button-text {
+    padding-top: 7px;
+    margin: 0;
+}
+
+.button-container {
+    width: 250px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -35,7 +35,7 @@ function Admin() {
       }
 
       const responses = useSelector( store => store.responseReducer)
-      console.log(responses);
+    //   console.log(responses);
 
     return(
         <>
@@ -54,15 +54,13 @@ function Admin() {
                     
                         {responses.map( (response) => {
                             return (
-                                <>
                                 <tr key={response.id}>
-                                    <td key={response.id}>{response.feeling}</td>
+                                    <td>{response.feeling}</td>
                                     <td>{response.understanding}</td>
                                     <td>{response.support}</td>
                                     <td>{response.comments}</td>
-                                    <td><button onClick={() => deleteFeedback(response.id)} id={response.id}>Delete</button></td>
+                                    <td><button onClick={() => deleteFeedback(response.id)}>Delete</button></td>
                                 </tr>
-                                </>
                             )
                         })}
                    

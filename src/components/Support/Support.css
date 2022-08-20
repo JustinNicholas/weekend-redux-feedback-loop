@@ -1,0 +1,16 @@
+.card-heading {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.next-button {
+    height: 40px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    background-color: #5923F2;
+    color: white;
+    border-radius: 10px;
+}

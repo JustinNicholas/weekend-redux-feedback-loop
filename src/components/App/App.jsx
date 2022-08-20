@@ -4,7 +4,7 @@ import './App.css';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
-import Supported from '../Supported/Supported';
+import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Admin from '../Admin/Admin';
@@ -26,33 +26,18 @@ function App() {
       </Route>
       <Route path="/understanding">
         <Understanding />
-        <Link to="/supported">
-        <button>Next</button>
-        </Link>
       </Route>
-      <Route path="/supported">
-        <Supported />
-        <Link to="/comments">
-        <button>Next</button>
-        </Link>
+      <Route path="/support">
+        <Support />
       </Route>
       <Route path="/comments">
         <Comments />
-        <Link to="/review">
-        <button>Next</button>
-        </Link>
       </Route>
       <Route path="/review">
         <Review />
-        <Link to="/complete">
-          <button>Submit</button>
-        </Link>
       </Route>
       <Route path="/complete">
         <Complete />
-        <Link to="/">
-          <button>Submit New Feedback</button>
-        </Link>
       </Route>
       {/* this is the stretch goal */}
       <Route path="/admin">

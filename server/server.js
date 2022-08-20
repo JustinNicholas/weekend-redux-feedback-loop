@@ -40,6 +40,19 @@ app.post('/feedback', (req, res) => {
 })
 })
 
+app.delete('/feedback/:id', (req, res) => {
+    const queryText = 'DELETE FROM "feedback" WHERE id=$1;';
+    const queryValues = [req.params.id];
+
+    pool.query(queryText, queryValues)
+        .then( result => {
+            res.sendStatus(204);
+        }).catch( err => {
+            console.log(err);
+            res.sendStatus(500);
+        })
+})
+
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {
     console.log('Listening on port: ', PORT);

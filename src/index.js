@@ -22,10 +22,18 @@ const formReducer = (state = {feeling: 0, understanding: 0, support: 0, comments
     return state;
 }
 
+const responseReducer = ( state = [], action ) => {
+    if (action.type === 'SET_RESPONSES') {
+        return action.payload;
+    }
+    return state;
+}
+
 
 const storeInstance = createStore(
     combineReducers({
-        formReducer
+        formReducer,
+        responseReducer
     }),
     applyMiddleware(logger),
 )

@@ -1,15 +1,10 @@
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { useState } from "react";
 
 function Complete() {
   const history = useHistory();
-  const dispatch = useDispatch();
 
   const handleSubmitNew = () => {
-    dispatch({
-      type: "CLEAR_FORM"
-    });
 
     history.push("/");
   };

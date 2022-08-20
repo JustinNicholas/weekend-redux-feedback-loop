@@ -1,9 +1,11 @@
 import {useHistory} from 'react-router-dom';
+import { useDispatch } from "react-redux";
 import axios from 'axios';
 import {useSelector} from 'react-redux';
 
 function Review() {
 
+  const dispatch = useDispatch();
   const form = useSelector(store => store.formReducer)
   const history = useHistory();
 
@@ -11,6 +13,9 @@ function Review() {
 
     axios.post('/feedback', form)
       .then( response => {
+        dispatch({
+          type: "CLEAR_FORM"
+        });
         history.push('/complete')
       }).catch( err => {
         console.log('cs post fail');

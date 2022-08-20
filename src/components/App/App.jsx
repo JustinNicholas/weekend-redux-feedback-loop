@@ -12,6 +12,8 @@ import Complete from '../Complete/Complete';
 
 function App() {
 
+
+
   return (
     <Router>
       <div className='App'>
@@ -21,9 +23,6 @@ function App() {
         </header>
       <Route exact path="/">
         <Feeling />
-        <Link to="/understanding">
-        <button>Next</button>
-        </Link>
       </Route>
       <Route path="/understanding">
         <Understanding />

@@ -36,11 +36,14 @@ function App() {
 
   return (
     <Router>
+      
       {/* This info and header is returned on every page */}
       <div className="App">
+      
         <div className="full-width-header">
           <div className="card-container">
             <header className="App-header">
+              <div className='customLogo'></div>
               <h1 className="App-title">
                 FEEDBACK <span className="reg">QUIZ</span>
               </h1>

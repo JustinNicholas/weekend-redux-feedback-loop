@@ -1,3 +1,11 @@
+.customLogo {
+  background-image: url('../../../public/images/JustinCustomLogo.svg');
+  height: 25px;
+  width: 255px;
+  margin-left: 0;
+  margin-top: 0;
+}
+
 .App {
   text-align: center;
   font-family: 'Poppins', sans-serif;

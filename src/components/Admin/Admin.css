@@ -3,12 +3,21 @@ table {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
+    width: 95%;
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 
 .admin-header{
-    margin-top: 150px;
+    margin-top: 15px;
 }
+
+th {
+    border: 1px solid black;
+}
+
 td{
     margin-right: 20px;
     margin-left: 20px;
+    border: 1px solid black;
 }

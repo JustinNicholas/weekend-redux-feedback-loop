@@ -12,7 +12,7 @@ app.use(express.static('build'));
 /** ---------- EXPRESS ROUTES ---------- **/
 
 app.get('/feedback', (req, res) => {
-    pool.query('SELECT * FROM "feedback";')
+    pool.query('SELECT * FROM "feedback" ORDER BY id DESC;')
         .then(result => {
             res.send(result.rows)
         }).catch( err => {

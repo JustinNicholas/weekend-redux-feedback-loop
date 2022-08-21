@@ -7,6 +7,9 @@ import logger from 'redux-logger';
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux'
 
+// we track all of the info from the form and we have progress amounts kept track of in this reducer.
+// each page has a different action type that sets the corresponding key in the object, and updates the
+// progress by updating the hard coded progress amounts.
 const formReducer = (state = {feeling: 0, understanding: 0, support: 0, comments: '', progress: 0}, action) => {
     if (action.type === 'SET_FEELING'){
         return {...state, feeling: action.payload, progress: 20}
@@ -24,6 +27,7 @@ const formReducer = (state = {feeling: 0, understanding: 0, support: 0, comments
     return state;
 }
 
+// this holds our info that we get from our get request in the /admin page.
 const responseReducer = ( state = [], action ) => {
     if (action.type === 'SET_RESPONSES') {
         return action.payload;
@@ -31,7 +35,7 @@ const responseReducer = ( state = [], action ) => {
     return state;
 }
 
-
+// we pass both reducers in the store.
 const storeInstance = createStore(
     combineReducers({
         formReducer,

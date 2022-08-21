@@ -8,12 +8,12 @@ import './Admin.css';
 function Admin() {
 
     const dispatch = useDispatch();
-
+// we call the get request on page load.
     useEffect(() => {
         fetchFeedback();
     }, [])
     
-
+// we get the infor from the data base and pass it to the store.
     const fetchFeedback = () => {
         axios.get('/feedback')
           .then( response => {
@@ -25,7 +25,7 @@ function Admin() {
             console.log(err);
           })
       }
-
+// we have a delete router that sends delete request to the server by id.
       const deleteFeedback = (id) => {
         axios.delete(`/feedback/${id}`)
           .then( response => {
@@ -34,7 +34,7 @@ function Admin() {
             console.log(err);
           })
       }
-
+// Below gives us access to the response reducer info in the store.
       const responses = useSelector( store => store.responseReducer)
     //   console.log(responses);
 
@@ -52,7 +52,7 @@ function Admin() {
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    {/* We map through out info we passed to the store. to render to each table row. */}
                         {responses.map( (response) => {
                             return (
                                 <tr key={response.id}>

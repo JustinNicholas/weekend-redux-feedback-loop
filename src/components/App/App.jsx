@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import axios from "axios";
+// dependencies
 import "./App.css";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Feeling from "../Feeling/Feeling";
 import Understanding from "../Understanding/Understanding";
 import Support from "../Support/Support";
@@ -15,9 +14,11 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { useSelector } from "react-redux";
 
 function App() {
+  //different levels of progress are shared from the formReducer in the store.
   const progressStore = useSelector((store) => store.formReducer);
   const progress = progressStore.progress;
 
+  //styling for progress bar from MUI
   const BorderLinearProgress = withStyles((theme) => ({
     root: {
       height: 10,
@@ -29,12 +30,13 @@ function App() {
     },
     bar: {
       borderRadius: 5,
-      backgroundColor: "#1a90ff",
+      backgroundColor: "#5923F2",
     },
   }))(LinearProgress);
 
   return (
     <Router>
+      {/* This info and header is returned on every page */}
       <div className="App">
         <div className="full-width-header">
           <div className="card-container">
@@ -46,10 +48,10 @@ function App() {
                 The goal of this project was to create a 4-step feedback quiz
                 including a review page. Once submitted, the quiz data is stored
                 in a database that is used to display user responses in an admin
-                view.{" "}
+                view.
               </p>
             </header>
-
+          {/* Each route has the progress bar and question card shown except for the admin page */}
             <Route exact path="/">
               <div className="question-card">
                 <BorderLinearProgress
@@ -124,6 +126,8 @@ function App() {
             </Route>
           </div>
         </div>
+        {/* the admin page is stored outside of the header and card container div. 
+        Since it needs to be below the header and not in the card when rendered*/}
         <Route path="/admin">
           <Admin />
         </Route>

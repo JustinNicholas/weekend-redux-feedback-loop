@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux';
 function Complete() {
   const history = useHistory();
   const dispatch = useDispatch();
-
+  // once the submit new feedback button is clicked, we clear the form and bring the user back to /.
   const handleSubmitNew = () => {
     dispatch({
       type: 'CLEAR_PROGRESS'

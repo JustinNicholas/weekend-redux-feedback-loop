@@ -9,14 +9,16 @@ function Comments() {
   const [comments, setComments] = useState("");
 
   const handleNext = () => {
+    // checks that input is entered before sending the rating to the store.
     dispatch({
+      //sends comments to store
       type: "SET_COMMENTS",
       payload: comments
     });
-
+    //sends user to /review
     history.push("/review");
   };
-
+// heading, text area, and next button are rendered to card. Next button takes user to /review.
   return (
     <>
       <h1 className='card-heading'>Any comments you want to leave?</h1>

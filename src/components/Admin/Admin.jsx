@@ -3,6 +3,7 @@ import axios from "axios";
 import {useEffect} from 'react'
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import './Admin.css';
 
 function Admin() {
 
@@ -39,7 +40,7 @@ function Admin() {
 
     return(
         <>
-            <h1>Admin</h1>
+            <h1 className="admin-header">Admin</h1>
             <table>
                 <thead>
                     <tr>

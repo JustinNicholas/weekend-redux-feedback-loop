@@ -63,13 +63,12 @@ function App() {
           <Route path="/complete">
             <Complete />
           </Route>
-          {/* this is the stretch goal */}
-          <Route path="/admin">
-            <Admin />
-          </Route>
         </div>
         </div>
         </div>
+        <Route path="/admin">
+          <Admin />
+        </Route>
       </div>
     </Router>
   );

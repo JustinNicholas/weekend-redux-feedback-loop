@@ -16,7 +16,7 @@ function Complete() {
   return (
     <>
       <h1>Complete!</h1>
-      <button onClick={handleSubmitNew}>Submit New Feedback</button>
+      <div className="next-button" onClick={handleSubmitNew}><p className="button-text">Submit New Feedback</p></div>
     </>
   );
 }

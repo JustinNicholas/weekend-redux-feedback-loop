@@ -108,10 +108,12 @@ function Review() {
     return (
       <>
         <h1>Review</h1>
-        <p>Feelings: <strong>{form.feeling}</strong></p>
-        <p>Understanding: <strong>{form.understanding}</strong></p>
-        <p>Support: <strong>{form.support}</strong></p>
-        <p>Comments: <strong>{form.comments}</strong></p>
+        <div className='review-text-container'>
+          <p className='review-text'><strong>Feelings:</strong> {form.feeling}</p>
+          <p className='review-text'><strong>Understanding:</strong> {form.understanding}</p>
+          <p className='review-text'><strong>Support:</strong> {form.support}</p>
+          <div className='comment-review-text'><strong>Comments:</strong> {form.comments}</div>
+        </div>
         <div className='review-button-container'>
           <div className='submit-button' onClick={handleSubmit}><p className='button-text'>Submit</p></div>
           <div className='edit-button' onClick={updateEditState}><p className='button-text'>Edit</p></div>
@@ -124,10 +126,12 @@ function Review() {
     return (
       <>
         <h1>Review</h1>
-        <p>Feelings: <input onChange={(event) => handleFeelingChange(event)} type="number" min='1' max='5' value={updatedForm.feeling}/></p>
-        <p>Understanding: <input onChange={(event) => handleUnderstandingChange(event)} type="number" min='1' max='5' value={updatedForm.understanding}/></p>
-        <p>Support: <input onChange={(event) => handleSupportChange(event)} type="number" min='1' max='5' value={updatedForm.support}/></p>
-        <p>Comments: <input onChange={(event) => handleCommentsChange(event)} type="text" value={updatedForm.comments}/></p>
+        <div className='review-text-container'>
+          <p className='review-text'><strong>Feelings:</strong> <input onChange={(event) => handleFeelingChange(event)} type="number" min='1' max='5' value={updatedForm.feeling}/></p>
+          <p className='review-text'><strong>Understanding:</strong> <input onChange={(event) => handleUnderstandingChange(event)} type="number" min='1' max='5' value={updatedForm.understanding}/></p>
+          <p className='review-text'><strong>Support:</strong> <input onChange={(event) => handleSupportChange(event)} type="number" min='1' max='5' value={updatedForm.support}/></p>
+          <p className='review-text'><strong>Comments:</strong> <input onChange={(event) => handleCommentsChange(event)} type="text" value={updatedForm.comments}/></p>
+        </div>
         <div className='review-button-container'>
           <div className='submit-button' onClick={handleSubmitUpdated}><p className='button-text'>Submit</p></div>
           <div className='edit-button' onClick={updateEditState}><p className='button-text'>Cancel Edit</p></div>

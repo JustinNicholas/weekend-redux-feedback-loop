@@ -7,10 +7,18 @@
 .next-button {
     height: 40px;
     width: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 150px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* margin-top: 150px; */
     background-color: #5923F2;
     color: white;
     border-radius: 10px;
+    position: absolute;
+    left: 100px;
+    bottom: 50px
+}
+
+.next-button:hover {
+    background-color: white;
+    color: #5923F2;
 }

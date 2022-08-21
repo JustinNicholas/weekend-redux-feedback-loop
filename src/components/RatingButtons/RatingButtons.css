@@ -8,6 +8,7 @@
     margin-right: 5px;
     display: inline-block;
     pointer-events: all;
+    border: none;
 }
 
 .rating-button:hover{

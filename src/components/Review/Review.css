@@ -1,7 +1,6 @@
 .review-button-container{
     height: 40px;
     width: 220px;
-    position: relative;
     margin-left: auto;
     margin-right: auto;
 }
@@ -12,12 +11,13 @@
     width: 100px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background-color: #5923F2;
     color: white;
     border-radius: 10px;
     position: absolute;
-    left: 0;
+    left: 80px;
+    bottom: 50px;
 }
 
 .edit-button{
@@ -25,10 +25,41 @@
     width: 100px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background-color: #5923F2;
     color: white;
     border-radius: 10px;
     position: absolute;
-    right: 0;
+    right: 80px;
+    bottom: 50px;
+}
+
+.review-text-container {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-text{
+    text-align: left;
+}
+
+.comment-review-text{
+    text-align: left;
+    width: 300px;
+    height: 70px;
+    white-space: normal;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+
+.submit-button:hover{
+        background-color: white;
+        color: #5923F2;
+}
+
+.edit-button:hover{
+    background-color: white;
+    color: #5923F2;
 }
